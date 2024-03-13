@@ -5,7 +5,6 @@ const EditEmployee = ({ employeeList, updateState }) => {
 
   const { id } = useParams();
 
-  console.log(employeeList, "EDIT");
   const navigate = useNavigate()
 
   const [employee, setEmployee] = useState(
@@ -22,7 +21,6 @@ const EditEmployee = ({ employeeList, updateState }) => {
 
   useEffect(() => {
     editEmp = employeeList.find((emp) => emp.id === id)
-    console.log(editEmp, "useState");
 
     setEmployee({
       ...employee, 
@@ -33,17 +31,18 @@ const EditEmployee = ({ employeeList, updateState }) => {
       pincode: editEmp.pincode })
   }, [id])
 
-  let updateEmployee = {
-    id: employee.id,
-    name: employee.name,
-    state: employee.state,
-    city: employee.city,
-    pincode: employee.pincode
-  }
-
   function Submit(event) {
     event.preventDefault();
+    let updateEmployee = {
+      id: employee.id,
+      name: employee.name,
+      state: employee.state,
+      city: employee.city,
+      pincode: employee.pincode
+    }
+
     const updatedList = employeeList.filter((emp) => { return emp.id !== id });
+    
     updateState([updateEmployee, ...updatedList])
 
     setEmployee(

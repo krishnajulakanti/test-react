@@ -15,17 +15,19 @@ const CreateEmployee = ({ employeeList, updateState, mode }) => {
       pincode: ''
     }
   );
-  
-  let newEmployee = {
-    id: uuidv4(),
-    name: employee.name,
-    state: employee.state,
-    city: employee.city,
-    pincode: employee.pincode
-  }
 
   function Submit(event) {
     event.preventDefault();
+    let newEmployee = {
+      id: uuidv4(),
+      name: employee.name,
+      state: employee.state,
+      city: employee.city,
+      pincode: employee.pincode
+    }
+
+    console.log(newEmployee, "new");
+
     updateState([newEmployee, ...employeeList])
 
     setEmployee(
