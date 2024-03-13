@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Outlet, Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ReactLogo from './ReactLogo.png'
 
 const Login = () => {
@@ -15,7 +15,7 @@ const Login = () => {
     event.preventDefault();
     if (loginData.username && loginData.password !== (null || undefined || '')) {
       console.log(loginData, '1');
-      navigate('EmployeeList')
+      navigate('/EmployeeList')
       setLoginData({username: '', password: ''})
     }
   }

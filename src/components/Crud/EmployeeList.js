@@ -1,12 +1,15 @@
-import { React, useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { React, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import './Styles.css'
+import { EmployeeContext } from './EmployeeContext';
 
-const EmployeeList = ({ employeeList, updateState }) => {
+const EmployeeList = () => {
+
+  const { employeeList, setEmployeeList } = useContext(EmployeeContext);
 
   function DeleteRecord(id) {
     const updatedList = employeeList.filter((emp) => { return emp.id !== id });
-    updateState(updatedList);
+    setEmployeeList(updatedList);
   }
 
   return (

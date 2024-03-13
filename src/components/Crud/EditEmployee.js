@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { EmployeeContext } from './EmployeeContext';
 
-const EditEmployee = ({ employeeList, updateState }) => {
+const EditEmployee = () => {
+
+  const { employeeList, setEmployeeList } = useContext(EmployeeContext);
 
   const { id } = useParams();
 
@@ -43,7 +46,7 @@ const EditEmployee = ({ employeeList, updateState }) => {
 
     const updatedList = employeeList.filter((emp) => { return emp.id !== id });
     
-    updateState([updateEmployee, ...updatedList])
+    setEmployeeList([updateEmployee, ...updatedList])
 
     setEmployee(
       {

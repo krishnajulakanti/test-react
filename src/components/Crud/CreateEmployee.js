@@ -1,9 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { Outlet, Link, useNavigate } from 'react-router-dom'
+import React, { useState, useContext } from 'react'
+import {  useNavigate } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
 import './Styles.css'
+import { EmployeeContext } from './EmployeeContext';
 
-const CreateEmployee = ({ employeeList, updateState, mode }) => {
+const CreateEmployee = ({ mode }) => {
+
+  const { employeeList, setEmployeeList } = useContext(EmployeeContext);
 
   const navigate = useNavigate()
 
@@ -26,9 +29,7 @@ const CreateEmployee = ({ employeeList, updateState, mode }) => {
       pincode: employee.pincode
     }
 
-    console.log(newEmployee, "new");
-
-    updateState([newEmployee, ...employeeList])
+    setEmployeeList([newEmployee, ...employeeList]);
 
     setEmployee(
       {
