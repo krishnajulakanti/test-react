@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { EmployeeProvider } from './components/Crud/EmployeeContext.js';
+import { EmployeeProvider } from './components/Employee-Module/EmployeeContext';
 
 function App() {
 
