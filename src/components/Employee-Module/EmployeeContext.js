@@ -25,7 +25,7 @@ export const EmployeeProvider = () => {
           <Route path='/' element={<Login />} />
           <Route path='CreateEmployee' element={<CreateEmployee mode={true} />} />
           <Route path='EmployeeList' element={<EmployeeList />} />
-          <Route path='EditEmployee/:id' element={<EditEmployee mode={false} />} />
+          <Route path='EditEmployee/:id' element={<CreateEmployee mode={false} />} />
         </Routes>
       </BrowserRouter>
     </EmployeeContext.Provider>
