@@ -2,6 +2,7 @@ import { React, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Styles.css'
 import { EmployeeContext } from './EmployeeContext';
+import UserDetailPanel from './UserDetailPanel';
 
 const EmployeeList = () => {
 
@@ -14,6 +15,9 @@ const EmployeeList = () => {
 
   return (
     <div className='container'>
+      <div>
+        <UserDetailPanel />
+      </div>
       <label className='heading'>Employee List</label>
       <div>
         <Link to='/CreateEmployee'>

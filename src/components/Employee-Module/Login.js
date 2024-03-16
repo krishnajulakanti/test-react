@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ReactLogo from './ReactLogo.png'
+import { CurrentUserContext } from './EmployeeContext'
 
 const Login = () => {
 
   const navigate = useNavigate()
+
+  const { setCurrentUser } = useContext(CurrentUserContext);
 
   const [loginData, setLoginData] = useState({
     username: '',
@@ -14,9 +17,11 @@ const Login = () => {
   const userLogin = (event) => {
     event.preventDefault();
     if (loginData.username && loginData.password !== (null || undefined || '')) {
-      console.log(loginData, '1');
+      setLoginData({ username: '', password: '' })
+
+      setCurrentUser(loginData);
+      
       navigate('/EmployeeList')
-      setLoginData({username: '', password: ''})
     }
   }
   return (

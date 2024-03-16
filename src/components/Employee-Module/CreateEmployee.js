@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
 import './Styles.css'
 import { EmployeeContext } from './EmployeeContext';
+import UserDetailPanel from './UserDetailPanel';
 
 const CreateEmployee = ({ mode }) => {
 
@@ -86,6 +87,9 @@ const CreateEmployee = ({ mode }) => {
 
   return (
     <div className='container'>
+      <div>
+        <UserDetailPanel />
+      </div>
       {mode ? <label className='heading'>Create Employee</label> : <label className='heading'>Edit Employee</label>}
       <div>
         <form onSubmit={Submit}>
