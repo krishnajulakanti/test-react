@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
 import './Styles.css'
-import { EmployeeContext } from './EmployeeContext';
+import { EmployeeContext } from './EmployeeModule';
 import UserDetailPanel from './UserDetailPanel';
 
 const CreateEmployee = ({ mode }) => {

@@ -1,7 +1,7 @@
 import { React, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Styles.css'
-import { EmployeeContext } from './EmployeeContext';
+import { EmployeeContext } from './EmployeeModule';
 import UserDetailPanel from './UserDetailPanel';
 
 const EmployeeList = () => {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { CurrentUserContext } from './EmployeeContext'
+import { CurrentUserContext } from '../../App';
 
 const UserDetailPanel = () => {
 
